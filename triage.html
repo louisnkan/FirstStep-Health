@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ProxiHealth Symptom Check — AI-powered triage for African diseases including malaria, typhoid, cholera and more." />
+  <meta name="theme-color" content="#2D5F3F" />
+  <title>Symptom Check — ProxiHealth</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/triage.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="ProxiHealth home">
+        <div class="nav__logo">🏥</div>
+        <span class="nav__title">ProxiHealth</span>
+      </a>
+      <div class="nav__links">
+        <a href="emergency.html" class="nav__link">Emergency</a>
+        <a href="triage.html" class="nav__link nav__link--active">Symptom Check</a>
+        <a href="index.html" class="nav__link">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="triage-header page-header">
+    <div class="container">
+      <div class="page-header__label">Symptom Triage</div>
+      <h1 class="page-header__title">What's happening?</h1>
+      <p class="page-header__subtitle">
+        Answer a few questions to understand your symptoms and what to do next.
+        Works offline.
+      </p>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 28px; padding-bottom: 48px;">
+
+    <!-- Progress Bar -->
+    <div class="triage-progress" aria-label="Assessment progress">
+      <div class="triage-progress__label">
+        <span id="triage-progress-label">Start</span>
+        <span>Symptom Assessment</span>
+      </div>
+      <div class="triage-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        <div class="triage-progress__fill" id="triage-progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Loading state -->
+    <div id="triage-loading" class="loading-spinner" aria-live="polite">
+      <div class="spinner" role="status"></div>
+      <p class="text-sm" style="color: var(--text-light); margin: 0;">Loading assessment…</p>
+    </div>
+
+    <!-- Fallback if load fails -->
+    <div id="triage-fallback" class="fallback-box" style="display:none;" aria-live="polite">
+      <h3 class="fallback-box__title">⚠️ Could not load symptom tree</h3>
+      <p style="margin-bottom: 16px; font-size: 0.95rem;">
+        The symptom assessment couldn't load. Here's general guidance:
+      </p>
+      <div class="step">
+        <span class="step__number">1</span>
+        <div class="step__content">
+          <div class="step__title">High fever + chills in Africa</div>
+          <div class="step__desc">Get a malaria test immediately. This is the most common cause of preventable death.</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step__number">2</span>
+        <div class="step__content">
+          <div class="step__title">Severe diarrhoea + vomiting</div>
+          <div class="step__desc">Start oral rehydration immediately. Cholera can dehydrate within hours.</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step__number">3</span>
+        <div class="step__content">
+          <div class="step__title">Stiff neck + high fever</div>
+          <div class="step__desc">Go to emergency immediately — possible meningitis.</div>
+        </div>
+      </div>
+      <a href="emergency.html" class="btn btn--primary mt-md">Go to Emergency Protocols</a>
+    </div>
+
+    <!-- Triage question/result container -->
+    <div id="triage-container" aria-live="polite">
+      <!-- Populated by triage.js -->
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer mt-lg">
+      <strong>This is a guide, not a diagnosis.</strong>
+      ProxiHealth is testing AI-powered triage to help people in areas without medical access
+      understand their symptoms and make better decisions. Always seek professional care when available.
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">ProxiHealth</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="emergency.html">Emergency Protocols</a>
+      </div>
+      <p style="font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.35);">
+        © 2025 ProxiHealth · Not a replacement for medical care
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/security.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/triage.js"></script>
+</body>
+</html>
