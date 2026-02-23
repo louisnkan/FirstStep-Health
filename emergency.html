@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ProxiHealth Emergency Protocols — step-by-step guidance for childbirth, bleeding, CPR, burns, snake bite and more." />
+  <meta name="theme-color" content="#2D5F3F" />
+  <title>Emergency Protocols — ProxiHealth</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/emergency.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="ProxiHealth home">
+        <div class="nav__logo">🏥</div>
+        <span class="nav__title">ProxiHealth</span>
+      </a>
+      <div class="nav__links">
+        <a href="emergency.html" class="nav__link nav__link--active">Emergency</a>
+        <a href="triage.html" class="nav__link">Symptom Check</a>
+        <a href="index.html" class="nav__link">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header (GREEN — calm, not panic-red) -->
+  <header class="emergency-header">
+    <div class="container">
+      <div class="emergency-header__pulse">Live guidance</div>
+      <h1 class="page-header__title" style="color:#fff; margin-bottom: 8px;">Emergency Protocols</h1>
+      <p class="page-header__subtitle">
+        Step-by-step guidance for critical emergencies. All protocols work without internet.
+      </p>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 32px; padding-bottom: 48px;">
+
+    <!-- Offline indicator for this page -->
+    <div id="offline-indicator" class="status-banner status-banner--info" style="display:none;">
+      📵 Offline — using stored protocols
+    </div>
+
+    <!-- Loading state — shown while JSON loads -->
+    <div id="protocol-loading" class="loading-spinner" aria-live="polite" aria-label="Loading protocols">
+      <div class="spinner" role="status"></div>
+      <p class="text-sm" style="color: var(--text-light); margin: 0;">Loading protocols…</p>
+    </div>
+
+    <!-- Fallback notice — shown if JSON load fails after 3 seconds -->
+    <div id="protocol-fallback" aria-live="polite">
+      <div class="status-banner status-banner--warn mb-md">
+        ⚠️ Couldn't load full protocol library. Showing essential protocols below.
+      </div>
+    </div>
+
+    <!-- Protocol Selection Grid -->
+    <div id="protocol-grid-wrapper">
+      <h2 class="mb-md" style="font-size: 1.1rem; font-weight: 600; color: var(--text-mid);">
+        Choose a situation
+      </h2>
+      <div id="protocol-grid" class="protocol-grid" role="list" aria-label="Emergency protocol list">
+        <!-- Populated by emergency.js -->
+      </div>
+
+      <!-- Single "Can't reach help" button -->
+      <div class="no-help-section mt-lg">
+        <div class="no-help-section__title">Can't reach emergency services?</div>
+        <div class="no-help-section__desc">
+          Select the situation above for detailed step-by-step guidance,
+          or get general advice for when you're completely alone.
+        </div>
+        <button class="btn btn--secondary btn--inline" id="btn-no-help" style="margin-top: 8px;">
+          🧭 I'm alone with no help available
+        </button>
+      </div>
+    </div>
+
+    <!-- "No help" guidance modal (hidden by default) -->
+    <div id="no-help-modal" class="hidden mt-lg" aria-live="polite">
+      <div class="card card--green">
+        <div style="display:flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+          <h3 style="margin-bottom: 12px;">When you're alone with no help</h3>
+          <button id="btn-close-modal" aria-label="Close" style="background:none; border:none; font-size:1.3rem; cursor:pointer; color: var(--text-light); flex-shrink:0;">✕</button>
+        </div>
+        <div class="step">
+          <span class="step__number">1</span>
+          <div class="step__content">
+            <div class="step__title">Choose the most relevant protocol above</div>
+            <div class="step__desc">Every protocol has been written for solo caregivers with limited resources.</div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step__number">2</span>
+          <div class="step__content">
+            <div class="step__title">Send your location to someone</div>
+            <div class="step__desc">Text your GPS coordinates or nearest landmark to any contact who can send help.</div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step__number">3</span>
+          <div class="step__content">
+            <div class="step__title">Keep reading the protocol aloud</div>
+            <div class="step__desc">Narrating steps helps you stay focused and helps any bystanders assist you.</div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step__number">4</span>
+          <div class="step__content">
+            <div class="step__title">Get moving toward any health facility</div>
+            <div class="step__desc">A clinic, pharmacy, or community health worker — any trained person helps.</div>
+          </div>
+        </div>
+        <a href="triage.html" class="btn btn--primary mt-md">Also try Symptom Check →</a>
+      </div>
+    </div>
+
+    <!-- Protocol Viewer (hidden until card selected) -->
+    <div id="protocol-viewer" class="protocol-viewer" style="display:none;" aria-live="polite">
+      <div class="protocol-viewer__header">
+        <button class="protocol-viewer__back" id="btn-back" aria-label="Back to protocol list">←</button>
+        <h2 class="protocol-viewer__title" id="viewer-title"></h2>
+      </div>
+      <div class="protocol-viewer__body">
+        <div id="viewer-steps">
+          <!-- Populated by emergency.js -->
+        </div>
+
+        <div class="disclaimer mt-lg">
+          <strong>Important:</strong> These protocols are for emergencies when professional care is unreachable.
+          Always call for emergency services and get to a hospital as soon as possible.
+          ProxiHealth is testing AI-assisted emergency guidance — not replacing doctors.
+        </div>
+
+        <button class="btn btn--secondary mt-md" onclick="ProxiEmergency.goBack()">
+          ← Back to all protocols
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">ProxiHealth</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="triage.html">Symptom Check</a>
+      </div>
+      <p style="font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.35);">
+        © 2025 ProxiHealth · Not a replacement for emergency services
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/security.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/emergency.js"></script>
+
+  <script>
+    // Show offline indicator if needed
+    if (!navigator.onLine) {
+      document.getElementById('offline-indicator').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
