@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ProxiHealth — AI-powered emergency medical guidance for Africa. Free, offline-first, mobile-first." />
+  <meta name="theme-color" content="#2D5F3F" />
+  <title>ProxiHealth — Emergency Medical Guidance</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Homepage-specific styles */
+    .hero {
+      background: linear-gradient(135deg, #1A3D28 0%, var(--green-deep) 60%, #3D7A52 100%);
+      padding: 60px 0 80px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #D4EAD9;
+    }
+
+    .hero__title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__title em {
+      font-style: italic;
+      color: #7AE89A;
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: rgba(255,255,255,0.75);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 480px) {
+      .hero__buttons { flex-direction: row; max-width: none; justify-content: center; }
+    }
+
+    .hero__btn-primary {
+      background: #fff;
+      color: var(--green-deep);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 52px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+    .hero__btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+
+    .hero__btn-secondary {
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 52px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .hero__btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .stats-bar {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .stats-bar__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat__num {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--green-deep);
+      display: block;
+    }
+
+    .stat__label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .features {
+      padding: 60px 0;
+    }
+
+    .features__title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .features__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 560px) {
+      .features__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .feature-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px var(--shadow-soft);
+      transform: translateY(-2px);
+    }
+
+    .feature-card__icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .feature-card__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .feature-card__desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .emergency-cta {
+      background: var(--green-deep);
+      padding: 60px 0;
+      text-align: center;
+      color: #fff;
+    }
+
+    .emergency-cta__title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .emergency-cta__sub {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="ProxiHealth home">
+        <div class="nav__logo">🏥</div>
+        <span class="nav__title">ProxiHealth</span>
+      </a>
+      <div class="nav__links">
+        <a href="emergency.html" class="nav__link">Emergency</a>
+        <a href="triage.html" class="nav__link">Symptom Check</a>
+        <a href="index.html" class="nav__link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__badge">🌍 Built for Africa</div>
+      <h1 class="hero__title">
+        Emergency care,<br>
+        <em>wherever you are</em>
+      </h1>
+      <p class="hero__sub">
+        Offline-first emergency protocols and AI-powered symptom triage —
+        designed for the 500 million Africans who can't always reach a hospital.
+      </p>
+      <div class="hero__buttons">
+        <a href="emergency.html" class="hero__btn-primary">🆘 Emergency Protocols</a>
+        <a href="triage.html" class="hero__btn-secondary">Check Symptoms</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="container stats-bar__inner">
+      <div class="stat">
+        <span class="stat__num">500M+</span>
+        <span class="stat__label">Africans without nearby care</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">10+</span>
+        <span class="stat__label">Emergency protocols</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">100%</span>
+        <span class="stat__label">Works offline</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">Free</span>
+        <span class="stat__label">Always</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features__title">
+        <h2>What ProxiHealth does</h2>
+        <p>Life-saving guidance when professional care isn't reachable</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card">
+          <span class="feature-card__icon">📵</span>
+          <div class="feature-card__title">Works without internet</div>
+          <p class="feature-card__desc">All emergency protocols are stored on your device. No data connection needed in a crisis.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon">🌍</span>
+          <div class="feature-card__title">African disease detection</div>
+          <p class="feature-card__desc">Malaria, typhoid, cholera, meningitis — diseases common in Africa but overlooked by Western apps.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon">📱</span>
+          <div class="feature-card__title">Mobile-first design</div>
+          <p class="feature-card__desc">Large text, big touch targets, readable in sunlight. Designed for real emergencies on real phones.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon">🤱</span>
+          <div class="feature-card__title">Childbirth & critical care</div>
+          <p class="feature-card__desc">15-step childbirth protocol, CPR, severe bleeding, snake bite, burns — the most common deadly emergencies.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon">🤖</span>
+          <div class="feature-card__title">AI guidance (coming soon)</div>
+          <p class="feature-card__desc">Google Gemini integration for conversational triage — ask questions in your own words.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card__icon">🔒</span>
+          <div class="feature-card__title">Honest & responsible</div>
+          <p class="feature-card__desc">We're testing AI-assisted emergency care. We're transparent about what we are — not hiding behind "educational only."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency CTA -->
+  <section class="emergency-cta">
+    <div class="container">
+      <h2 class="emergency-cta__title">Is someone in danger right now?</h2>
+      <p class="emergency-cta__sub">Go straight to the emergency protocols.</p>
+      <a href="emergency.html" class="btn btn--emergency btn--inline" style="font-size:1.1rem; padding: 16px 36px;">
+        🆘 Open Emergency Guide
+      </a>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="container">
+    <div class="disclaimer" style="margin-top: 32px;">
+      <strong>ProxiHealth is being tested as an AI-assisted emergency tool.</strong>
+      It is not a replacement for emergency services or a doctor.
+      Always call for professional help when available.
+      Created by Louis Nkan to address preventable deaths across Africa.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">ProxiHealth</div>
+      <p class="footer__tagline">AI-powered emergency guidance for Africa</p>
+      <div class="footer__links">
+        <a href="emergency.html">Emergency Protocols</a>
+        <a href="triage.html">Symptom Triage</a>
+        <a href="mailto:contact@getproxihealth.com">Contact</a>
+      </div>
+      <p style="font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.35);">
+        © 2025 ProxiHealth · Built by Louis Nkan · Not a medical device
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/security.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
