@@ -1,0 +1,253 @@
+/* ============================================
+   ProxiHealth Emergency CSS
+   Calm, clear, action-oriented — not panic-red
+   ============================================ */
+
+/* --- Emergency Header (GREEN, not red) --- */
+.emergency-header {
+  background: linear-gradient(135deg, var(--green-deep) 0%, #1E4D2E 100%);
+  padding: var(--space-xl) 0 var(--space-lg);
+  color: #fff;
+}
+
+.emergency-header__pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255,255,255,0.12);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.emergency-header__pulse::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #7AE89A;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* --- Protocol Grid --- */
+.protocol-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+@media (min-width: 560px) {
+  .protocol-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* --- Protocol Card --- */
+.protocol-card {
+  background: var(--warm-white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  text-align: left;
+  width: 100%;
+  min-height: var(--touch-target);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.protocol-card:hover,
+.protocol-card:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.protocol-card--active {
+  border-color: var(--green-deep);
+  background: var(--green-mist);
+}
+
+.protocol-card__icon {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.protocol-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.protocol-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.protocol-card__severity {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-top: var(--space-sm);
+}
+
+.severity--critical {
+  background: #FFE8E8;
+  color: var(--alert-red);
+}
+
+.severity--urgent {
+  background: #FEF3E2;
+  color: #B7600A;
+}
+
+.severity--moderate {
+  background: var(--green-pale);
+  color: var(--green-deep);
+}
+
+/* --- Protocol Viewer --- */
+.protocol-viewer {
+  background: var(--warm-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-top: var(--space-lg);
+}
+
+.protocol-viewer__header {
+  background: var(--green-deep);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.protocol-viewer__back {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.protocol-viewer__back:hover { background: rgba(255,255,255,0.25); }
+
+.protocol-viewer__title {
+  font-family: var(--font-display);
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.protocol-viewer__body {
+  padding: var(--space-lg);
+}
+
+/* --- Emergency Steps (larger text for crisis readability) --- */
+.emergency-steps {
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.emergency-step {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border);
+  counter-increment: step-counter;
+}
+
+.emergency-step:last-child { border-bottom: none; }
+
+.emergency-step__num {
+  width: 40px;
+  height: 40px;
+  background: var(--green-deep);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.emergency-step__text {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.05rem; /* 18-20px range for readability in emergencies */
+  line-height: 1.6;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding-top: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.emergency-step__note {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-top: var(--space-xs);
+  font-weight: 400;
+}
+
+/* --- "Can't Reach Help" Section (single button, no duplicate) --- */
+.no-help-section {
+  background: var(--green-mist);
+  border: 2px solid var(--green-pale);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.no-help-section__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: var(--space-sm);
+}
+
+.no-help-section__desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  margin-bottom: var(--space-md);
+}
+
+/* --- Loading overlay with 3s fallback --- */
+#protocol-loading {
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+#protocol-fallback {
+  display: none;
+}
+
+/* shown by JS after 3s timeout */
+#protocol-fallback.visible {
+  display: block;
+}
