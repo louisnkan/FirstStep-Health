@@ -1,0 +1,249 @@
+{
+  "version": "2.0",
+  "updated": "2025-01",
+  "protocols": {
+    "childbirth": {
+      "id": "childbirth",
+      "title": "Emergency Childbirth",
+      "icon": "🤱",
+      "severity": "critical",
+      "description": "Baby coming before you can reach a hospital",
+      "steps": [
+        { "num": 1, "text": "Stay calm and reassure the mother. Panic makes everything worse.", "note": "Your calm voice is medicine right now." },
+        { "num": 2, "text": "Wash your hands thoroughly with soap and water for at least 30 seconds.", "note": "If no soap: hand sanitizer or clean cloth." },
+        { "num": 3, "text": "Lay the mother on her back with knees bent, or on her side if more comfortable.", "note": "Use clean cloths, a mat, or a folded wrapper under her." },
+        { "num": 4, "text": "Do NOT pull the baby — let the baby come naturally with each contraction.", "note": "Pulling can injure the baby's neck." },
+        { "num": 5, "text": "As the head appears, gently support it with both hands. Do not push it back.", "note": "If the bag of water hasn't broken, peel it back from the baby's face." },
+        { "num": 6, "text": "Check if the cord is around the neck. If yes, gently slip it over the head.", "note": "Do this quickly but gently." },
+        { "num": 7, "text": "After the head is out, the body usually follows in 1-2 more pushes. Support the body.", "note": "The baby will be slippery — hold firmly but gently." },
+        { "num": 8, "text": "Hold the baby slightly head-down to clear the airway. Wipe nose and mouth with a clean cloth.", "note": "The baby should cry within 30 seconds." },
+        { "num": 9, "text": "If baby doesn't cry: rub the back firmly, or flick the soles of the feet.", "note": "If still no breathing after 1 minute, begin infant CPR." },
+        { "num": 10, "text": "Keep the baby warm — skin-to-skin on the mother's chest is best. Cover both with a blanket.", "note": "Newborns lose heat fast." },
+        { "num": 11, "text": "Do NOT cut the cord until it stops pulsing (5-10 minutes), or leave it attached.", "note": "If you must cut: tie firmly 3cm and 5cm from baby's belly, cut between ties with clean blade." },
+        { "num": 12, "text": "The placenta will come 5-30 minutes after birth. Let the mother push it out naturally.", "note": "Do NOT pull the cord to speed this up." },
+        { "num": 13, "text": "If heavy bleeding after delivery: massage the lower abdomen firmly in circular motions.", "note": "The uterus should feel hard like a grapefruit." },
+        { "num": 14, "text": "Begin breastfeeding as soon as possible — it helps stop bleeding.", "note": "Breastfeeding causes natural contractions." },
+        { "num": 15, "text": "Get to a health facility as soon as possible, even if birth went well.", "note": "Both mother and baby need professional evaluation." }
+      ]
+    },
+    "bleeding": {
+      "id": "bleeding",
+      "title": "Severe Bleeding",
+      "icon": "🩸",
+      "severity": "critical",
+      "description": "Uncontrolled external bleeding",
+      "steps": [
+        { "num": 1, "text": "Put on gloves or use a plastic bag to protect yourself from bloodborne illness.", "note": "If nothing available, use multiple layers of cloth." },
+        { "num": 2, "text": "Apply firm, direct pressure to the wound with the cleanest cloth available.", "note": "Use your palm, not just fingers." },
+        { "num": 3, "text": "Press HARD and do not lift the cloth to check. Hold for at least 10-15 minutes.", "note": "Checking resets the clotting process." },
+        { "num": 4, "text": "If blood soaks through, add MORE cloth on top — do not remove the first layer.", "note": "Removing disrupts the clot forming underneath." },
+        { "num": 5, "text": "For limb wounds: if bleeding won't stop, apply a tourniquet 5-7cm above the wound.", "note": "Use cloth, a belt, or a strip of clothing tied tightly." },
+        { "num": 6, "text": "Write the time of tourniquet application on the person's skin.", "note": "Tell medical staff when they arrive." },
+        { "num": 7, "text": "Lay the person flat. Raise their legs 30cm if no head, neck, or spine injury suspected.", "note": "This keeps blood flowing to vital organs." },
+        { "num": 8, "text": "Keep the person warm with a blanket. Blood loss causes rapid chilling.", "note": "Hypothermia makes bleeding worse." },
+        { "num": 9, "text": "Talk to them. Keep them calm and awake if possible.", "note": "Ask their name, where they are." },
+        { "num": 10, "text": "Get to emergency care immediately. Do not remove pressure during transport.", "note": "Blood loss is time-critical." }
+      ]
+    },
+    "cpr_adult": {
+      "id": "cpr_adult",
+      "title": "CPR — Adult",
+      "icon": "💓",
+      "severity": "critical",
+      "description": "Person is unconscious and not breathing normally",
+      "steps": [
+        { "num": 1, "text": "Check the scene is safe. Tap shoulders firmly and shout: 'Are you okay?'", "note": "No response and no normal breathing = begin CPR." },
+        { "num": 2, "text": "Call for help loudly. Point at a specific person: 'YOU — call emergency services now!'", "note": "Vague calls to a crowd often go unanswered." },
+        { "num": 3, "text": "Lay the person on their back on a firm flat surface.", "note": "A soft mattress reduces CPR effectiveness." },
+        { "num": 4, "text": "Kneel beside their chest. Place the heel of one hand on the centre of their chest (lower half of breastbone).", "note": "Find the centre — between the nipples." },
+        { "num": 5, "text": "Place your second hand on top, interlace fingers. Keep fingers raised off the chest.", "note": "Only the heel of your bottom hand should touch." },
+        { "num": 6, "text": "Keep arms straight. Press down 5-6cm HARD and FAST. Release completely between compressions.", "note": "Full release lets the heart refill." },
+        { "num": 7, "text": "Aim for 100-120 compressions per minute — the beat of 'Stayin' Alive' by Bee Gees.", "note": "Count aloud: 1-2-3-4-5..." },
+        { "num": 8, "text": "After 30 compressions: tilt head back, lift chin. Pinch nose. Give 2 rescue breaths (1 second each).", "note": "Skip rescue breaths if untrained — hands-only CPR is still effective." },
+        { "num": 9, "text": "Continue 30:2 cycles without stopping until: person breathes, trained help arrives, or you are exhausted.", "note": "Switch with another person every 2 minutes if possible." },
+        { "num": 10, "text": "If an AED (defibrillator) is available: turn it on and follow its voice instructions immediately.", "note": "AEDs are designed for untrained users. Use it." }
+      ]
+    },
+    "burns": {
+      "id": "burns",
+      "title": "Burns",
+      "icon": "🔥",
+      "severity": "urgent",
+      "description": "Heat, chemical, or electrical burns",
+      "steps": [
+        { "num": 1, "text": "Remove the person from the heat source. If clothing is on fire: STOP, DROP, ROLL.", "note": "Remove smouldering clothing unless stuck to skin." },
+        { "num": 2, "text": "Cool the burn under cool (not cold, not ice) running water for 20 minutes.", "note": "This is the single most important step. Start within 3 hours." },
+        { "num": 3, "text": "Remove jewellery, watches, and tight items near the burn before swelling starts.", "note": "Do this gently and quickly." },
+        { "num": 4, "text": "Cover loosely with a clean non-fluffy material — cling film, a clean plastic bag, or damp cloth.", "note": "Do NOT use fluffy cotton or adhesive bandages." },
+        { "num": 5, "text": "Do NOT pop blisters. Do NOT apply toothpaste, butter, or traditional remedies to burns.", "note": "These trap heat and cause infection." },
+        { "num": 6, "text": "For chemical burns: flush with large amounts of water for 20+ minutes. Remove contaminated clothing.", "note": "Protect yourself from the chemical." },
+        { "num": 7, "text": "Give pain relief if available (paracetamol/panadol). Keep the person warm.", "note": "Burns cause rapid heat loss." },
+        { "num": 8, "text": "Seek emergency care for: burns on face/hands/genitals, burns larger than palm, in children/elderly, all electrical burns.", "note": "When in doubt, go to a facility." }
+      ]
+    },
+    "snake_bite": {
+      "id": "snake_bite",
+      "title": "Snake Bite",
+      "icon": "🐍",
+      "severity": "critical",
+      "description": "Venomous or unknown snake bite",
+      "steps": [
+        { "num": 1, "text": "Move away from the snake. Do NOT try to catch or kill it — more bites happen this way.", "note": "A photo of the snake helps doctors — only if safe." },
+        { "num": 2, "text": "Keep the person calm and as still as possible. Movement spreads venom faster.", "note": "Carry the person if they must move." },
+        { "num": 3, "text": "Remove rings, watches, tight clothing from the bitten limb before swelling starts.", "note": "Swelling can be severe." },
+        { "num": 4, "text": "Immobilize the bitten limb at or below heart level. Splint if possible (like a broken bone).", "note": "Keep still. Immobilization is the #1 first aid." },
+        { "num": 5, "text": "Mark the edge of any swelling with a pen and write the time. Check every 15 minutes.", "note": "This helps doctors track how fast venom is spreading." },
+        { "num": 6, "text": "Get to the nearest hospital with antivenom as fast as possible.", "note": "Antivenom is the only treatment. Time matters." },
+        { "num": 7, "text": "Do NOT: cut and suck the wound, apply tourniquet, apply ice, give alcohol.", "note": "These worsen outcomes and waste time." },
+        { "num": 8, "text": "If person stops breathing, begin CPR.", "note": "Some neurotoxic snakes cause respiratory paralysis." }
+      ]
+    },
+    "malaria": {
+      "id": "malaria",
+      "title": "Malaria",
+      "icon": "🦟",
+      "severity": "urgent",
+      "description": "High fever with chills in malaria-endemic area",
+      "steps": [
+        { "num": 1, "text": "Check temperature. Malaria fever is typically 38.5°C (101.3°F) or higher with shivering.", "note": "Fever may come in cycles: every 48 hours (P. vivax) or daily (P. falciparum)." },
+        { "num": 2, "text": "Give paracetamol/panadol to reduce fever. Follow package dosing by weight.", "note": "Do NOT give aspirin to children under 16." },
+        { "num": 3, "text": "Keep the person hydrated — oral rehydration salts (ORS) or clean water with a pinch of salt and sugar.", "note": "High fever causes dangerous dehydration." },
+        { "num": 4, "text": "Watch for danger signs: convulsions, unconsciousness, severe vomiting, inability to drink, very fast breathing.", "note": "Any of these = go to emergency immediately." },
+        { "num": 5, "text": "Get a malaria rapid diagnostic test (RDT) or blood smear at the nearest clinic as soon as possible.", "note": "Artemisinin-based treatment (ACT) must be prescribed — do not self-treat without diagnosis." },
+        { "num": 6, "text": "In children under 5: malaria can turn severe very fast. Do not wait at home if worried.", "note": "Severe malaria in children can kill within hours." },
+        { "num": 7, "text": "Complete the full course of any prescribed antimalarials, even if feeling better.", "note": "Stopping early causes relapse and resistance." }
+      ]
+    },
+    "cholera": {
+      "id": "cholera",
+      "title": "Cholera / Severe Diarrhoea",
+      "icon": "💧",
+      "severity": "urgent",
+      "description": "Sudden severe watery diarrhoea and vomiting",
+      "steps": [
+        { "num": 1, "text": "Start oral rehydration therapy (ORT) immediately. Every trip to the toilet = a cup of ORS.", "note": "ORS = 1 litre clean water + 6 teaspoons sugar + ½ teaspoon salt." },
+        { "num": 2, "text": "Keep drinking fluids constantly — even if vomiting, small sips every few minutes help.", "note": "Rice water, coconut water, or diluted juice also work." },
+        { "num": 3, "text": "Danger signs: sunken eyes, dry mouth, no urination for 6+ hours, extreme weakness, confusion.", "note": "These mean severe dehydration — go to emergency now." },
+        { "num": 4, "text": "In children: use a syringe or spoon to give ORS 5mL every 2-3 minutes if vomiting.", "note": "Continue breastfeeding infants throughout." },
+        { "num": 5, "text": "Wash hands with soap after every toilet visit and before food. Use separate toilet if possible.", "note": "Cholera spreads extremely fast through faecal contamination." },
+        { "num": 6, "text": "Do not share food, water, or utensils with the sick person.", "note": "Boil all water and cook all food thoroughly." },
+        { "num": 7, "text": "Get to a health facility for IV fluids and antibiotics if vomiting prevents oral hydration.", "note": "Cholera kills through dehydration — IV fluids can save life quickly." }
+      ]
+    },
+    "typhoid": {
+      "id": "typhoid",
+      "title": "Typhoid Fever",
+      "icon": "🌡️",
+      "severity": "urgent",
+      "description": "Prolonged fever with abdominal symptoms",
+      "steps": [
+        { "num": 1, "text": "Watch for: persistent fever (rising each day for 3-5 days), headache, stomach pain, constipation or diarrhoea.", "note": "Typhoid fever builds slowly — unlike malaria which spikes." },
+        { "num": 2, "text": "Give paracetamol for fever. Keep the person well hydrated with clean water and ORS.", "note": "Do NOT use ibuprofen or aspirin — risk of bleeding." },
+        { "num": 3, "text": "Ensure strict hygiene — handwashing, clean water, separate utensils.", "note": "Typhoid spreads through contaminated food and water." },
+        { "num": 4, "text": "Get to a clinic for a Widal test or blood culture to confirm typhoid.", "note": "Antibiotics (chloramphenicol, ciprofloxacin, azithromycin) are essential — self-treatment is risky." },
+        { "num": 5, "text": "Danger signs: intestinal bleeding (black or bloody stool), hole in gut (sudden severe abdominal pain), confusion.", "note": "These are emergencies — go immediately." },
+        { "num": 6, "text": "Complete the FULL antibiotic course prescribed. Typhoid relapse is common with incomplete treatment.", "note": "Drug-resistant typhoid is increasing — only a doctor should prescribe." }
+      ]
+    },
+    "meningitis": {
+      "id": "meningitis",
+      "title": "Meningitis",
+      "icon": "🧠",
+      "severity": "critical",
+      "description": "Stiff neck, severe headache, fever — possible meningitis",
+      "steps": [
+        { "num": 1, "text": "Check for the classic triad: fever + stiff neck (can't touch chin to chest) + severe headache.", "note": "Any 2 of these 3 = treat as meningitis until proven otherwise." },
+        { "num": 2, "text": "Check for rash: small red/purple spots that don't fade when you press a glass against them = meningococcal emergency.", "note": "This rash means bacteria in bloodstream — minutes matter." },
+        { "num": 3, "text": "Get to emergency care IMMEDIATELY. Do not wait to see if it improves.", "note": "Meningitis can kill in 24 hours and cause deafness/disability quickly." },
+        { "num": 4, "text": "In babies: bulging fontanelle (soft spot on top of head), high-pitched cry, refusing to feed, abnormal drowsiness.", "note": "Classic stiff neck may be absent in infants." },
+        { "num": 5, "text": "Keep the person comfortable, in a darkened quiet room. Light and noise worsen symptoms.", "note": "Photophobia (light sensitivity) is a key sign." },
+        { "num": 6, "text": "Do not give food or drink if they may need emergency surgery or are vomiting.", "note": "IV access and urgent antibiotics are the only effective treatment." }
+      ]
+    },
+    "choking": {
+      "id": "choking",
+      "title": "Choking",
+      "icon": "😮‍💨",
+      "severity": "critical",
+      "description": "Person cannot breathe due to blocked airway",
+      "steps": [
+        { "num": 1, "text": "Ask: 'Are you choking?' If they can cough, speak, or breathe — encourage coughing. Do not intervene yet.", "note": "Effective coughing is more powerful than any first aid." },
+        { "num": 2, "text": "If they CANNOT cough, speak, or breathe: stand behind them, lean them forward.", "note": "Lean them so their head is lower than their chest." },
+        { "num": 3, "text": "Give 5 firm back blows between shoulder blades with the heel of your hand.", "note": "Hard and fast. Each blow should be separate." },
+        { "num": 4, "text": "If not cleared: give 5 abdominal thrusts (Heimlich). Stand behind, wrap arms around waist, make a fist above navel, pull sharply upward-inward.", "note": "For pregnant women or obese: use chest thrusts instead." },
+        { "num": 5, "text": "Alternate 5 back blows and 5 abdominal thrusts until object clears or person goes unconscious.", "note": "Be forceful — lives depend on it." },
+        { "num": 6, "text": "If person goes unconscious: lower them to the ground, call for help, start CPR — begin with 30 compressions.", "note": "Before rescue breaths: look in mouth and remove any visible object." },
+        { "num": 7, "text": "For infants under 1 year: use 5 back blows + 5 chest thrusts (NOT abdominal thrusts). Hold face-down across your forearm.", "note": "Never do blind finger sweeps in infants." }
+      ]
+    }
+  },
+
+  "triage": {
+    "start": {
+      "id": "start",
+      "type": "question",
+      "text": "What is most urgently concerning right now?",
+      "options": [
+        { "label": "Someone is unconscious or not breathing", "next": "unconscious" },
+        { "label": "Severe pain or injury", "next": "severe_pain" },
+        { "label": "High fever or illness symptoms", "next": "fever_illness" },
+        { "label": "I have mild symptoms, want to understand them", "next": "mild_symptoms" }
+      ]
+    },
+    "unconscious": {
+      "id": "unconscious",
+      "type": "result",
+      "urgency": "critical",
+      "title": "Potential emergency — act immediately",
+      "advice": "Check for breathing. If not breathing normally, begin CPR. Send someone to call emergency services right now.",
+      "protocol": "cpr_adult"
+    },
+    "fever_illness": {
+      "id": "fever_illness",
+      "type": "question",
+      "text": "How high is the fever and how long has it lasted?",
+      "options": [
+        { "label": "Very high (39°C+) and started suddenly with shivering", "next": "malaria_path" },
+        { "label": "Moderate, building over several days with stomach pain", "next": "typhoid_path" },
+        { "label": "High fever with severe headache and stiff neck", "next": "meningitis_path" },
+        { "label": "Fever with vomiting and severe watery diarrhoea", "next": "cholera_path" }
+      ]
+    },
+    "malaria_path": {
+      "id": "malaria_path",
+      "type": "result",
+      "urgency": "high",
+      "title": "Possible Malaria",
+      "advice": "Symptoms match malaria pattern — common in this region. Get to a clinic for rapid test (RDT) today. Give paracetamol for fever and keep hydrated while arranging transport.",
+      "protocol": "malaria",
+      "diseases": ["Malaria", "Typhoid", "Dengue"]
+    },
+    "typhoid_path": {
+      "id": "typhoid_path",
+      "type": "result",
+      "urgency": "high",
+      "title": "Possible Typhoid Fever",
+      "advice": "Gradual fever building over days with abdominal symptoms suggests typhoid. Strict hygiene is essential. See a doctor for testing and prescribed antibiotics.",
+      "protocol": "typhoid",
+      "diseases": ["Typhoid", "Malaria", "Appendicitis"]
+    },
+    "meningitis_path": {
+      "id": "meningitis_path",
+      "type": "result",
+      "urgency": "critical",
+      "title": "Possible Meningitis — Go immediately",
+      "advice": "Fever + headache + stiff neck is a medical emergency. Get to the nearest hospital NOW. Every hour matters with meningitis.",
+      "protocol": "meningitis",
+      "diseases": ["Meningitis", "Severe Malaria", "Encephalitis"]
+    },
+    "cholera_path": {
+      "id": "cholera_path",
+      "type": "result",
+      "urgency": "high",
+      "title": "Possible Cholera / Severe Gastroenteritis",
+      "advice": "Start oral rehydration immediately (ORS or clean water + sugar + salt). Go to a health facility if vomiting prevents drinking or if signs of severe dehydration appear.",
+      "protocol": "cholera",
+      "diseases": ["Cholera", "Typhoid", "Food Poisoning"]
+    }
+  }
+}
